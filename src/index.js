@@ -31,7 +31,7 @@ const toFunctionNode = ({css}) => {
 
 const toCssNode = ({css, map}, enableSourceMaps) => {
   return {
-    code: css,
+    code: 'export default ' + JSON.stringify(css) + ';',
     map: (enableSourceMaps && map)
       ? JSON.parse(map)
       : {mappings: ''}
@@ -40,7 +40,7 @@ const toCssNode = ({css, map}, enableSourceMaps) => {
 
 export default function (options = {}) {
   const filter = createFilter(options.include, options.exclude)
-  const plugins = [cssnext()]
+  const plugins = [cssnext(options.cssnextOptions)]
   if (options.minify) {
     plugins.push(cssnano({autoprefixer: false}))
   }

@@ -76,6 +76,14 @@ console.log(styleSheet)
 
 From [rollup-pluginutils](https://github.com/rollup/rollup-pluginutils#createfilter).
 
+### `cssnextOptions`
+
+Options for [cssnext](http://cssnext.io/).
+
+### `postcssOptions`
+
+Options for [postcss](http://postcss.org/).
+
 ## Author
 
 [Tim De Pauw](https://github.com/timdp)
