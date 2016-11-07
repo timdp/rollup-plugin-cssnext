@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-cssnext",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Easy integration between Rollup and cssnext.",
   "main": "index.js",
   "jsnext:main": "src/index.js",
