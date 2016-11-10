@@ -3,18 +3,22 @@ import cssnext from 'postcss-cssnext'
 import cssnano from 'cssnano'
 import {createFilter} from 'rollup-pluginutils'
 
-const RE_VAR = /\bvar\(--([A-Za-z0-9_\-.\[\]$]+)\)/g
+const RE_VAR = /([\s\S]*?)\bvar\(--([A-Za-z0-9_\-.\[\]$]+)\)/g
 
 const RE_FIRST = /^[^.\[\]]*/
 
 const toProps = (path) => path.replace(RE_FIRST, (name) => `[${JSON.stringify(name)}]`)
 
 const parseVars = (css, name = 'data') => {
-  const str = JSON.stringify(css).replace(RE_VAR, (_, path) => {
-    const props = toProps(path)
-    return `" + ${name}${props} + "`
-  }) + ';'
-  return `function (${name}) { return ${str} }`
+  let res = ''
+  let idx = 0
+  let match
+  while ((match = RE_VAR.exec(css)) != null) {
+    res += JSON.stringify(match[1]) + ' + ' + name + toProps(match[2]) + ' + '
+    idx = match.index + match[0].length
+  }
+  res += JSON.stringify(css.substr(idx)) + ';'
+  return `function (${name}) { return ${res} }`
 }
 
 const toFunctionNode = ({css}) => {
