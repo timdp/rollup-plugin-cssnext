@@ -6,7 +6,8 @@
   "jsnext:main": "src/index.js",
   "author": "Tim De Pauw <hi@tmdpw.eu> (https://tmdpw.eu/)",
   "engines": {
-    "node": ">=4"
+    "node": ">=4",
+    "npm": ">=4 <6"
   },
   "license": "MIT",
   "files": [
@@ -17,14 +18,14 @@
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "prepublish": "in-publish && npm run build || not-in-publish",
+    "prepublishOnly": "npm run build",
     "test": "gulp test"
   },
   "repository": "timdp/rollup-plugin-cssnext",
   "bugs": "https://github.com/timdp/rollup-plugin-cssnext/issues",
   "dependencies": {
     "cssnano": "^3.8.0",
-    "postcss": "^5.2.5",
+    "postcss": "^5.2.17",
     "postcss-cssnext": "^2.8.0",
     "rollup-pluginutils": "^2.0.0"
   },
@@ -41,15 +42,14 @@
     "gulp-load-plugins": "^1.4.0",
     "gulp-mocha": "^3.0.1",
     "gulp-sourcemaps": "^2.2.0",
-    "gulp-standard": "^8.0.2",
-    "in-publish": "^2.0.0",
+    "gulp-standard": "^10.0.0",
     "isparta": "^4.0.0",
     "mocha-junit-reporter": "^1.12.1",
     "run-sequence": "^1.2.2",
-    "sinon": "^1.17.6",
+    "sinon": "^2.2.0",
     "sinon-chai": "^2.8.0",
-    "standard": "^8.5.0",
-    "yargs": "^6.3.0"
+    "standard": "^10.0.2",
+    "yargs": "^8.0.1"
   },
   "standard": {
     "globals": [
@@ -61,6 +61,11 @@
       "afterEach",
       "expect",
       "sinon"
+    ]
+  },
+  "greenkeeper": {
+    "ignore": [
+      "gulp-mocha"
     ]
   }
 }

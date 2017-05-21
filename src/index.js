@@ -3,9 +3,9 @@ import cssnext from 'postcss-cssnext'
 import cssnano from 'cssnano'
 import {createFilter} from 'rollup-pluginutils'
 
-const RE_VAR = /([\s\S]*?)\bvar\(--([A-Za-z0-9_\-.\[\]$]+)\)/g
+const RE_VAR = /([\s\S]*?)\bvar\(--([A-Za-z0-9_\-.[\]$]+)\)/g
 
-const RE_FIRST = /^[^.\[\]]*/
+const RE_FIRST = /^[^.[\]]*/
 
 const toProps = (path) => path.replace(RE_FIRST, (name) => `[${JSON.stringify(name)}]`)
 
