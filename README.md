@@ -1,8 +1,8 @@
 # rollup-plugin-cssnext
 
-[![npm](https://img.shields.io/npm/v/rollup-plugin-cssnext.svg)](https://www.npmjs.com/package/rollup-plugin-cssnext) [![Dependencies](https://img.shields.io/david/timdp/rollup-plugin-cssnext.svg)](https://david-dm.org/timdp/rollup-plugin-cssnext) [![Build Status](https://img.shields.io/travis/timdp/rollup-plugin-cssnext/master.svg)](https://travis-ci.org/timdp/rollup-plugin-cssnext) [![Coverage Status](https://img.shields.io/coveralls/timdp/rollup-plugin-cssnext/master.svg)](https://coveralls.io/r/timdp/rollup-plugin-cssnext) [![JavaScript Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![npm](https://img.shields.io/npm/v/rollup-plugin-cssnext.svg)](https://www.npmjs.com/package/rollup-plugin-cssnext) [![Dependencies](https://img.shields.io/david/timdp/rollup-plugin-cssnext.svg)](https://david-dm.org/timdp/rollup-plugin-cssnext) [![JavaScript Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://standardjs.com/)
 
-Easy integration between [Rollup](http://rollupjs.org/) and [cssnext](http://cssnext.io/).
+Easy integration between [Rollup](http://rollupjs.org/) and [postcss-preset-env](https://preset-env.cssdb.org/).
 
 ## Installation
 
@@ -61,7 +61,7 @@ body {
 }
 ```
 
-With `{dynamic: true}`, you'd use this stylesheet as follows:
+With `{ dynamic: true }`, you'd use this stylesheet as follows:
 
 ```js
 import buildCss from './style.css'
@@ -76,13 +76,13 @@ console.log(styleSheet)
 
 From [rollup-pluginutils](https://github.com/rollup/rollup-pluginutils#createfilter).
 
-### `cssnextOptions`
-
-Options for [cssnext](http://cssnext.io/).
-
 ### `postcssOptions`
 
 Options for [postcss](http://postcss.org/).
+
+### `presetEnvOptions`
+
+Options for [postcss-preset-env](https://preset-env.cssdb.org/).
 
 ## Author
 
