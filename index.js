@@ -3,9 +3,9 @@ const presetEnv = require('postcss-preset-env')
 const cssnano = require('cssnano')
 const { createFilter } = require('rollup-pluginutils')
 
-const RE_VAR = /([\s\S]*?)\bvar\(--([A-Za-z0-9_\-.[]$]+)\)/g
+const RE_VAR = /([\s\S]*?)\bvar\(--([A-Za-z0-9_\-.[\]$]+)\)/g
 
-const RE_FIRST = /^[^.[]]*/
+const RE_FIRST = /^[^.[\]]*/
 
 const toProps = path =>
   path.replace(RE_FIRST, name => `[${JSON.stringify(name)}]`)
