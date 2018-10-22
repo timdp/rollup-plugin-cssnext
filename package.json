@@ -18,7 +18,7 @@
   "repository": "timdp/rollup-plugin-cssnext",
   "bugs": "https://github.com/timdp/rollup-plugin-cssnext/issues",
   "dependencies": {
-    "cssnano": "^4.1.0",
+    "cssnano": "^4.1.7",
     "postcss": "^7.0.2",
     "postcss-preset-env": "^5.3.0",
     "rollup-pluginutils": "^2.0.0"
